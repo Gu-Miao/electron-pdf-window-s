@@ -1,4 +1,6 @@
-# electron-pdf-window
+# electron-pdf-window-s
+
+This repo is a updater version of [electron-pdf-window](https://github.com/gerhardberger/electron-pdf-window).
 
 view PDF files in electron browser windows. this module adds support for viewing
 PDF files in electron [`BrowserWindow`s](http://electron.atom.io/docs/api/browser-window/).
@@ -10,8 +12,7 @@ can be used just like it.
   <img align="center" src="./screenshot.png" height=400 />
 </p>
 
-
-``` javascript
+```javascript
 const { app } = require('electron')
 const PDFWindow = require('electron-pdf-window')
 
@@ -34,10 +35,12 @@ $ npm i electron-pdf-window
 ## usage
 
 #### `win = new PDFWindow([opts])`
+
 `win` is an electron [`BrowserWindow`](http://electron.atom.io/docs/api/browser-window/)
 that has support for viewing PDF files.
 
 #### `PDFWindow.addSupport(win)`
+
 adds PDF viewing support for `win`, which is a `BrowserWindow` instance.
 
 ## using from the renderer process
@@ -47,7 +50,7 @@ recommended, because electron doesn't support proper extending of their built-in
 classes. In order to add PDF support from the renderer, use the `addSupport`
 method.
 
-``` js
+```js
 const { BrowserWindow } = require('electron').remote
 const PDFWindow = require('electron-pdf-window')
 
