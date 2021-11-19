@@ -20,14 +20,21 @@
     "pdfjs"
   ],
   "license": "MIT",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "scripts": {},
+  "scripts": {
+    "build": "rollup -c"
+  },
   "dependencies": {
     "got": "^11.8.3",
     "read-chunk": "^4.0.2"
   },
   "devDependencies": {
-    "electron": "^16.0.1"
+    "rollup": "^2.60.0",
+    "rollup-plugin-clear": "^2.0.7"
+  },
+  "peerDependencies": {
+    "electron": "^16.0.0"
   }
 }
