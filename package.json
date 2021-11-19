@@ -23,6 +23,7 @@
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "build": "rollup -c"
   },
