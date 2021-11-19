@@ -1,8 +1,7 @@
-const electron = require('electron')
-const path = require('path')
-const { readChunkSync } = require('read-chunk')
-const extend = require('deep-extend')
-const got = require('got').default
+import electron from 'electron'
+import { readChunkSync } from 'read-chunk'
+import got from 'got'
+import path from 'path'
 
 const { BrowserWindow } = electron
 
@@ -65,6 +64,8 @@ class PDFWindow extends BrowserWindow {
     super(options)
   }
 
+  static viewerPath = PDF_VIEWER_PATH
+
   static addSupport(browserWindow) {
     const { loadURL } = browserWindow
     browserWindow.loadURL = async (url, options) => {
@@ -76,7 +77,7 @@ class PDFWindow extends BrowserWindow {
 
       loadURL.call(
         browserWindow,
-        `file://${PDF_VIEWER_PATH}?file=${decodeURIComponent(url)}`,
+        `file://${PDFWindow.viewerPath}?file=${decodeURIComponent(url)}`,
         options
       )
     }
@@ -89,8 +90,8 @@ class PDFWindow extends BrowserWindow {
       return
     }
 
-    super.loadURL(`file://${PDF_VIEWER_PATH}?file=${decodeURIComponent(url)}`, options)
+    super.loadURL(`file://${PDFWindow.viewerPath}?file=${decodeURIComponent(url)}`, options)
   }
 }
 
-module.exports = PDFWindow
+export default PDFWindow
