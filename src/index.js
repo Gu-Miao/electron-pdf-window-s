@@ -1,14 +1,14 @@
 import electron from 'electron'
-import { readChunkSync } from 'read-chunk'
+import { sync as readChunkSync } from 'read-chunk'
 import got from 'got'
 import path from 'path'
 
 const { BrowserWindow } = electron
 
-const PDF_VIEWER_PATH = path.join(__dirname, 'viewer/web/viewer.html')
+const PDF_VIEWER_PATH = path.join(__dirname, '../viewer/web/viewer.html')
 
 function isAlreadyLoadedWithPdfJs(url) {
-  return url.startsWith(`file://${PDF_JS_PATH}?file=`)
+  return url.startsWith(`file://${PDFWindow.viewerPath}?file=`)
 }
 
 function isFile(url) {
@@ -17,7 +17,7 @@ function isFile(url) {
 
 function isPDFMime(url) {
   const filePath = url.replace(/^file:\/\//i, '')
-  const buffer = readChunkSync(filePath, { startPosition: 0, length: 262 })
+  const buffer = readChunkSync(filePath, 0, 262)
 
   return buffer[0] === 0x25 && buffer[1] === 0x50 && buffer[2] === 0x44 && buffer[3] === 0x46
 }
