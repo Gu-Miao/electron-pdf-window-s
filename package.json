@@ -20,6 +20,15 @@
     "pdfjs"
   ],
   "license": "MIT",
+  "files": [
+    "dist",
+    "types",
+    "viewer",
+    "LICENSE.txt",
+    "README_zh.md",
+    "README.md",
+    "package.json"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "types/index.d.ts",
