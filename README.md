@@ -1,68 +1,94 @@
 # electron-pdf-window-s
 
-This repo is a updater version of [electron-pdf-window](https://github.com/gerhardberger/electron-pdf-window).
+View pdf in new browser windows.
 
-view PDF files in electron browser windows. this module adds support for viewing
-PDF files in electron [`BrowserWindow`s](http://electron.atom.io/docs/api/browser-window/).
-it works even if you navigate to a PDF file from a site, or opening a PDF file in
-a new window. a `PDFWindow` instance is just a subclass of `BrowserWindow` so it
-can be used just like it.
+![npm](https://img.shields.io/npm/v/electron-pdf-window-s?logo=npm&style=flat-square)
+![npm type definitions](https://img.shields.io/npm/types/electron-pdf-window-s?logo=typescript&style=flat-square)
+![npm bundle size](https://img.shields.io/bundlephobia/min/electron-pdf-window-s?logo=npm&style=flat-square)
+![GitHub](https://img.shields.io/github/license/Gu-Miao/electron-pdf-window-s?logo=github&style=flat-square)
 
-<p align="center">
-  <img align="center" src="./screenshot.png" height=400 />
-</p>
+# Install
 
-```javascript
+Use npm or yarn:
+
+```bash
+# Use npm
+npm install electron-pdf-window-s -D
+
+# Use yarn
+yarn add electron-pdf-window-s -D
+```
+
+# Usage
+
+A simple example:
+
+```js
 const { app } = require('electron')
-const PDFWindow = require('electron-pdf-window')
+const PDFWindow = require('electron-pdf-window-s')
 
 app.on('ready', () => {
   const win = new PDFWindow({
     width: 800,
-    height: 600
+    height: 600,
   })
 
   win.loadURL('http://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf')
 })
 ```
 
-## install
+You will see pdf window is show.
 
-```
-$ npm i electron-pdf-window
-```
+## `new PDFWindow(options)`
 
-## usage
+Create a pdf window instance. The option is same as [BrowserWindow](http://www.electronjs.org/docs/latest/api/browser-window)'s option.
 
-#### `win = new PDFWindow([opts])`
+Then, you could use `loadURL()` to load a PDF file or url.
 
-`win` is an electron [`BrowserWindow`](http://electron.atom.io/docs/api/browser-window/)
-that has support for viewing PDF files.
+## `PDFWindow.viewerPath`
 
-#### `PDFWindow.addSupport(win)`
+Static property, specifies path for the pdfjs viewer.
 
-adds PDF viewing support for `win`, which is a `BrowserWindow` instance.
+Default is `path.join(__dirname, '../viewer/web/viewer.html')`
 
-## using from the renderer process
 
-Using the `PDFWindow` class directly from the renderer process is not
-recommended, because electron doesn't support proper extending of their built-in
-classes. In order to add PDF support from the renderer, use the `addSupport`
-method.
+## `PDFWindow.addSupport(browserWindow)`
 
-```js
-const { BrowserWindow } = require('electron').remote
-const PDFWindow = require('electron-pdf-window')
+Static method, enable normal BrowserWindow to support loading pdf by `loadURL()`.
 
-const win = new BrowserWindow({ width: 800, height: 600 })
+# About electron-pdf-window
 
-PDFWindow.addSupport(win)
+Special thanks to [@gerhardberger](https://github.com/gerhardberger). This project is based on his [electron-pdf-window](https://github.com/gerhardberger/electron-pdf-window.git). But unfortunately, that library no longer seems to be maintained. So I froked it and created new one.
 
-win.loadURL('file:///a/b/c.pdf')
-```
+## Differences between them
 
-## test
+- Version of pdfjs viewer
+- No listeners of `will-navigate` and `new-window` events anymore.
+- Typescript support
 
-```
-$ npm test
-```
+# Electron Support
+
+At least `>=8.0.0` version.
+
+# About PDFJS Viewer
+
+Website: [http://mozilla.github.io/pdf.js/](http://mozilla.github.io/pdf.js/)
+
+Version: Stable(v2.10.377)
+
+Options wiki: [Viewer options · mozilla/pdf.js Wiki](https://github.com/mozilla/pdf.js/wiki/Viewer-options)
+
+Changes in this library:
+
+- Remove exmpale pdf file.
+- Remove cross origin limit(Delete `validateFileURL()` function in `viewer.js`).
+
+## Support signature?
+
+**Now is `unknow`**
+
+We have modify some codes to support signature feature. But we didn't do that in the latest version.
+
+# LICENSE
+
+[MIT LICENSE](./LICENSE.txt)
