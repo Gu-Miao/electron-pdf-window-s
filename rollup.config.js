@@ -14,12 +14,6 @@ const config = {
       exports: 'auto',
       sourcemap: true,
     },
-    {
-      file: pkg.module,
-      format: 'esm',
-      exports: 'auto',
-      sourcemap: true,
-    },
   ],
   external: ['path', 'electron', 'got', 'read-chunk'],
   plugins: [

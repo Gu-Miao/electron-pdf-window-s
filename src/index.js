@@ -1,7 +1,7 @@
-import electron from 'electron'
-import { sync as readChunkSync } from 'read-chunk'
-import got from 'got'
-import path from 'path'
+const electron = require('electron')
+const readChunk = require('read-chunk')
+const got = require('got')
+const path = require('path')
 
 const { BrowserWindow } = electron
 
@@ -17,7 +17,7 @@ function isFile(url) {
 
 function isPDFMime(url) {
   const filePath = url.replace(/^file:\/\//i, '')
-  const buffer = readChunkSync(filePath, 0, 262)
+  const buffer = readChunk.sync(filePath, 0, 262)
 
   return buffer[0] === 0x25 && buffer[1] === 0x50 && buffer[2] === 0x44 && buffer[3] === 0x46
 }
