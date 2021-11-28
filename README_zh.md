@@ -25,12 +25,14 @@ yarn add electron-pdf-window-s -D
 
 ```js
 const { app } = require('electron')
-const PDFWindow = require('electron-pdf-window-s')
+
+// 使用默认导出以获得语法补全
+const PDFWindow = require('electron-pdf-window-s').default
 
 app.on('ready', () => {
   const win = new PDFWindow({
     width: 800,
-    height: 600,
+    height: 600
   })
 
   win.loadURL('http://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf')
@@ -51,7 +53,6 @@ app.on('ready', () => {
 
 默认值为 `path.join(__dirname, '../viewer/web/viewer.html')`。
 
-
 ## `PDFWindow.addSupport(browserWindow)`
 
 静态方法，让普通的 `BrowserWindow` 实例可以通过 `loadURL()` 方法加载 pdf 文件。
@@ -59,7 +60,6 @@ app.on('ready', () => {
 # 关于 electron-pdf-window
 
 特别感谢 [@gerhardberger](https://github.com/gerhardberger)。 本项目完全基于他的 [electron-pdf-window](https://github.com/gerhardberger/electron-pdf-window.git)。但遗憾的是，那个库似乎已经不再更新了。所以我创建了一个新的库。
-
 
 ## 两个库之间的差异
 

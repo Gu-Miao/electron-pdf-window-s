@@ -25,12 +25,14 @@ A simple example:
 
 ```js
 const { app } = require('electron')
-const PDFWindow = require('electron-pdf-window-s')
+
+// Use defualt export so you could get intelligent completion
+const PDFWindow = require('electron-pdf-window-s').default
 
 app.on('ready', () => {
   const win = new PDFWindow({
     width: 800,
-    height: 600,
+    height: 600
   })
 
   win.loadURL('http://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf')
@@ -50,7 +52,6 @@ Then, you could use `loadURL()` to load a PDF file or url.
 Static property, specifies path for the pdfjs viewer.
 
 Default is `path.join(__dirname, '../viewer/web/viewer.html')`
-
 
 ## `PDFWindow.addSupport(browserWindow)`
 

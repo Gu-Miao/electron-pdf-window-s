@@ -1,16 +1,16 @@
 const { app, BrowserWindow } = require('electron')
-const PDFWindow = require('../dist/index')
+const PDFWindow = require('../dist/index').default
 const path = require('path')
 
 app.on('ready', () => {
   const win = new PDFWindow({
     width: 800,
-    height: 600,
+    height: 600
   })
 
   const win2 = new BrowserWindow({
     width: 800,
-    height: 600,
+    height: 600
   })
 
   PDFWindow.addSupport(win2)
