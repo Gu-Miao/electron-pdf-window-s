@@ -4,7 +4,6 @@
 
 ![npm](https://img.shields.io/npm/v/electron-pdf-window-s?logo=npm&style=flat-square)
 ![npm type definitions](https://img.shields.io/npm/types/electron-pdf-window-s?logo=typescript&style=flat-square)
-![npm bundle size](https://img.shields.io/bundlephobia/min/electron-pdf-window-s?logo=npm&style=flat-square)
 ![GitHub](https://img.shields.io/github/license/Gu-Miao/electron-pdf-window-s?logo=github&style=flat-square)
 
 # 安装
@@ -75,7 +74,7 @@ app.on('ready', () => {
 
 网站：[http://mozilla.github.io/pdf.js/](http://mozilla.github.io/pdf.js/)
 
-版本：Stable(v2.10.377)
+版本：Stable(v2.13.216)
 
 wiki：[Viewer options · mozilla/pdf.js Wiki](https://github.com/mozilla/pdf.js/wiki/Viewer-options)
 

@@ -4,7 +4,6 @@ View pdf in new browser windows.
 
 ![npm](https://img.shields.io/npm/v/electron-pdf-window-s?logo=npm&style=flat-square)
 ![npm type definitions](https://img.shields.io/npm/types/electron-pdf-window-s?logo=typescript&style=flat-square)
-![npm bundle size](https://img.shields.io/bundlephobia/min/electron-pdf-window-s?logo=npm&style=flat-square)
 ![GitHub](https://img.shields.io/github/license/Gu-Miao/electron-pdf-window-s?logo=github&style=flat-square)
 
 # Install
@@ -75,7 +74,7 @@ At least `>=8.0.0` version.
 
 Website: [http://mozilla.github.io/pdf.js/](http://mozilla.github.io/pdf.js/)
 
-Version: Stable(v2.10.377)
+Version: Stable(v2.13.216)
 
 Options wiki: [Viewer options · mozilla/pdf.js Wiki](https://github.com/mozilla/pdf.js/wiki/Viewer-options)
 
@@ -86,9 +85,9 @@ Changes in this library:
 
 ## Support signature?
 
-**Now is `unknow`**
+**Now is `unknown`**
 
-We have modify some codes to support signature feature. But we didn't do that in the latest version.
+We have modify some code to support signature feature. But we didn't do that in the latest version.
 
 # LICENSE
 

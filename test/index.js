@@ -1,5 +1,5 @@
 const { app, BrowserWindow } = require('electron')
-const PDFWindow = require('../dist/index').default
+const PDFWindow = require('..').default
 const path = require('path')
 
 app.on('ready', () => {

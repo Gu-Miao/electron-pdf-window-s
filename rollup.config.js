@@ -11,16 +11,16 @@ const config = {
     {
       file: pkg.main,
       format: 'cjs',
-      exports: 'auto',
-      sourcemap: true,
-    },
+      exports: 'named',
+      sourcemap: true
+    }
   ],
   external: ['path', 'electron', 'got', 'read-chunk'],
   plugins: [
     clear({
-      targets: ['dist'],
-    }),
-  ],
+      targets: ['dist']
+    })
+  ]
 }
 
 export default config
