@@ -6,6 +6,8 @@ View pdf in new browser windows.
 ![npm type definitions](https://img.shields.io/npm/types/electron-pdf-window-s?logo=typescript&style=flat-square)
 ![GitHub](https://img.shields.io/github/license/Gu-Miao/electron-pdf-window-s?logo=github&style=flat-square)
 
+English | [简体中文](./README_zh.md)
+
 # Install
 
 Use npm or yarn:
