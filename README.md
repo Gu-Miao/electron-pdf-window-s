@@ -70,13 +70,13 @@ Special thanks to [@gerhardberger](https://github.com/gerhardberger). This proje
 
 # Electron Support
 
-At least `>=8.0.0` version.
+At least `>=31.0.0` version.
 
 # About PDFJS Viewer
 
 Website: [http://mozilla.github.io/pdf.js/](http://mozilla.github.io/pdf.js/)
 
-Version: Stable(v2.13.216)
+Version: Stable(v5.1.91)
 
 Options wiki: [Viewer options · mozilla/pdf.js Wiki](https://github.com/mozilla/pdf.js/wiki/Viewer-options)
 

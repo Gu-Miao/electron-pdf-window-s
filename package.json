@@ -1,6 +1,6 @@
 {
   "name": "electron-pdf-window-s",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "View pdf in new browser windows.",
   "author": {
     "name": "Gu-Miao",
@@ -33,19 +33,18 @@
   "types": "types/index.d.ts",
   "scripts": {
     "build": "rollup -c",
-    "pretest": "npm run build",
-    "test": "electron test/index.js"
+    "test": "npm run build && electron test/index.js"
   },
   "dependencies": {
     "got": "^11.8.3",
     "read-chunk": "3.2.0"
   },
   "devDependencies": {
-    "electron": "^16.0.1",
+    "electron": "35.1.4",
     "rollup": "^2.60.0",
     "rollup-plugin-clear": "^2.0.7"
   },
   "peerDependencies": {
-    "electron": ">=8.0.0"
+    "electron": ">=31.0.0"
   }
 }

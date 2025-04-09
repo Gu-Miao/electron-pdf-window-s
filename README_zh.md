@@ -70,13 +70,13 @@ app.on('ready', () => {
 
 # Electron 支持
 
-使用 `>=8.0.0` 版本的 `electron`。
+使用 `>=31.0.0` 版本的 `electron`。
 
 # 关于 PDFJS Viewer
 
 网站：[http://mozilla.github.io/pdf.js/](http://mozilla.github.io/pdf.js/)
 
-版本：Stable(v2.13.216)
+版本：Stable(v5.1.91)
 
 wiki：[Viewer options · mozilla/pdf.js Wiki](https://github.com/mozilla/pdf.js/wiki/Viewer-options)
 
